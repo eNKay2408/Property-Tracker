@@ -21,10 +21,10 @@ app.use("/api/v1/properties", propertyRouter);
 
 const startServer = async () => {
 	try {
-		connectDB(process.env.MONGODB_URL);
+		connectDB(process.env.MONGODB_URI);
 
-		app.listen(8080, () =>
-			console.log("Server is running on port http://localhost:8080")
+		app.listen(3000, () =>
+			console.log("Server is running on port http://localhost:3000")
 		);
 	} catch (error) {
 		console.log(error);

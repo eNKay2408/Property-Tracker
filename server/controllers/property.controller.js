@@ -65,12 +65,13 @@ const getPropertyDetail = async (req, res) => {
 };
 
 const createProperty = async (req, res) => {
+	const session = await mongoose.startSession();
+
 	try {
 		const { title, description, propertyType, location, price, photo, email } =
 			req.body;
 
 		// Start a new session...
-		const session = await mongoose.startSession();
 		session.startTransaction();
 
 		const user = await User.findOne({ email }).session(session);
