@@ -37,7 +37,7 @@ import Paper from "@mui/material/Paper";
 import Tooltip from "@mui/material/Tooltip";
 import type { RefineThemedLayoutV2SiderProps } from "@refinedev/mui";
 
-import { logo } from "../../assets";
+import { icon } from "../../assets";
 
 export const ThemedSiderV2: React.FC<RefineThemedLayoutV2SiderProps> = ({
 	Title: TitleFromProps,
@@ -437,7 +437,7 @@ export const ThemedSiderV2: React.FC<RefineThemedLayoutV2SiderProps> = ({
 								fontSize: "12px",
 							}}
 						>
-							<RenderToTitle collapsed={false} text="eNKay" icon={logo} />
+							<RenderToTitle collapsed={false} text="eNKay" icon={icon} />
 						</Box>
 						{drawer}
 					</Box>
@@ -475,7 +475,7 @@ export const ThemedSiderV2: React.FC<RefineThemedLayoutV2SiderProps> = ({
 						<RenderToTitle
 							collapsed={siderCollapsed}
 							text="eNKay"
-							icon={logo}
+							icon={icon}
 						/>
 						{!siderCollapsed && (
 							<IconButton size="small" onClick={() => setSiderCollapsed(true)}>

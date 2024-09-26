@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { CredentialResponse } from "../interfaces/google";
 
 import { ThemedTitleV2 } from "../components/layout/title";
-import { logo } from "../assets";
+import { icon } from "../assets";
 
 const Login: React.FC = () => {
 	useEffect(() => {
@@ -71,7 +71,7 @@ const Login: React.FC = () => {
 						justifyContent: "center",
 					}}
 					text="eNKay"
-					icon={logo}
+					icon={icon}
 				/>
 
 				<GoogleButton />

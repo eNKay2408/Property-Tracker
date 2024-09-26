@@ -43,7 +43,7 @@ export const ThemedTitleV2: React.FC<RefineLayoutThemedTitleProps> = ({
 				{icon}
 			</SvgIcon> */}
 
-			<img src={icon?.toString() ?? ""} alt="logo" width="30px" height="30px" />
+			<img src={icon?.toString() ?? ""} alt="icon" width="30px" height="30px" />
 
 			{!collapsed && (
 				<Typography
