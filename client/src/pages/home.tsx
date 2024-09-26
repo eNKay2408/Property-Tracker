@@ -18,8 +18,14 @@ const Home = () => {
 		resource: "properties",
 		config: {
 			pagination: {
-				pageSize: 5,
+				pageSize: 3,
 			},
+			sort: [
+				{
+					field: "price",
+					order: "desc",
+				},
+			],
 		},
 	});
 
@@ -81,7 +87,7 @@ const Home = () => {
 				mt="25px"
 			>
 				<Typography fontSize={18} fontWeight={600} color="#F9F7F7">
-					Latest Properties
+					Hot Properties
 				</Typography>
 				<Box mt={2.5} sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
 					{latestProperties.map((property) => (
