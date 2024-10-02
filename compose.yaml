@@ -1,0 +1,40 @@
+services:
+  web:
+    depends_on:
+      - api
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    image: property-tracker-client
+    command: dev
+    ports:
+      - 5173:5173
+    environment:
+      VITE_API_URL: http://localhost:3000
+    develop:
+      watch:
+        - path: ./client
+          ignore:
+            - ./client/node_modules
+          target: /app
+          action: sync
+        - path: ./client/package.json
+          action: rebuild
+
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    image: property-tracker-server
+    command: start
+    ports:
+      - 3000:3000
+    develop:
+      watch:
+        - path: ./server
+          ignore:
+            - ./server/node_modules
+          target: /app
+          action: sync
+        - path: ./server/package.json
+          action: rebuild
